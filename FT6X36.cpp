@@ -63,7 +63,7 @@ void FT6X36::loop()
 {
 	while (_isrCounter > 0)
 	{
-		_isrCounter--;
+		_isrCounter=_isrCounter-1;
 		processTouch();
 	}
 }
@@ -124,7 +124,7 @@ void FT6X36::processTouch()
 
 void FT6X36::onInterrupt()
 {
-	_isrCounter++;
+	_isrCounter=_isrCounter+1;
 
 	if (_isrHandler)
 	{
